@@ -43,7 +43,7 @@
 
 # My Blog App 💻  <a name="about-project"></a>
 
-> This is a blog app based on ruby on rails. This app will feature users, posts, comments and likes.
+This is a blog app based on ruby on rails. This app will feature users, posts, comments and likes.
 
 ## 🛠 Built With <a name="built-with"></a>
 <h2> Tech Stack </h2>
