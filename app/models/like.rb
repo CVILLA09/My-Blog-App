@@ -2,8 +2,12 @@ class Like < ApplicationRecord
   belongs_to :user
   belongs_to :post
 
-  # A method that updates the likes counter for a post
-  def update_likes_counter
+  # Callback to update the likes counter for a post
+  after_create :increment_post_likes_counter
+
+  private
+
+  def increment_post_likes_counter
     post.increment!(:likes_counter)
   end
 end
