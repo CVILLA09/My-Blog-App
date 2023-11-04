@@ -9,13 +9,17 @@ class Post < ApplicationRecord
   attribute :comments_counter, :integer, default: 0
   attribute :likes_counter, :integer, default: 0
 
-  # A method to update the posts counter for a user
-  def update_posts_counter
-    author.increment!(:posts_counter)
-  end
+  # Callback to update the posts counter for a user
+  after_create :increment_user_posts_counter
 
   # A method which returns the 5 most recent comments for a given post
   def recent_comments
     comments.order(created_at: :desc).limit(5)
+  end
+
+  private
+
+  def increment_user_posts_counter
+    author.increment!(:posts_counter)
   end
 end
