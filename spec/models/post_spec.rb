@@ -26,4 +26,23 @@ RSpec.describe Post, type: :model do
       expect(post.errors[:likes_counter]).to include('must be greater than or equal to 0')
     end
   end
+
+  describe 'methods' do
+    describe '#recent_comments' do
+      before(:each) do
+        @user = User.create(name: 'Jane Doe', posts_counter: 0)
+        @post = @user.posts.create(title: 'Sample Post', text: 'This is a sample post', comments_counter: 0,
+                                   likes_counter: 0)
+        6.times do |i|
+          @post.comments.create(text: "Comment #{i}")
+        end
+      end
+
+      it 'returns the 5 most recent comments' do
+        expect(@post.recent_comments.count).to eq(5)
+        expect(@post.recent_comments.first.text).to eq('Comment 5')
+        expect(@post.recent_comments.last.text).to eq('Comment 1')
+      end
+    end
+  end
 end
