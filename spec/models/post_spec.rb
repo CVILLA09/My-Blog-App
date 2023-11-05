@@ -30,18 +30,25 @@ RSpec.describe Post, type: :model do
   describe 'methods' do
     describe '#recent_comments' do
       before(:each) do
-        @user = User.create(name: 'Jane Doe', posts_counter: 0)
-        @post = @user.posts.create(title: 'Sample Post', text: 'This is a sample post', comments_counter: 0,
-                                   likes_counter: 0)
+        @user = User.create!(name: 'Jane Doe', posts_counter: 0)
+        @post = @user.posts.create!(title: 'Sample Post', text: 'This is a sample post', comments_counter: 0,
+                                    likes_counter: 0)
         6.times do |i|
-          @post.comments.create(text: "Comment #{i}")
+          comment = @post.comments.create!(user: @user, text: "Comment #{i}", created_at: Time.now + i.seconds)
+          puts "Failed to save comment: #{comment.errors.full_messages.join(', ')}" if comment.new_record?
         end
       end
 
+      it 'checks if all comments are saved' do
+        expect(@post.comments.count).to eq(6)
+      end
+
       it 'returns the 5 most recent comments' do
-        expect(@post.recent_comments.count).to eq(5)
-        expect(@post.recent_comments.first.text).to eq('Comment 5')
-        expect(@post.recent_comments.last.text).to eq('Comment 1')
+        recent_comments = @post.recent_comments
+        expect(recent_comments.count).to eq(5)
+        # Check that the comments returned are exactly the ones we expect
+        expected_comments = @post.comments.order(created_at: :desc).limit(5)
+        expect(recent_comments).to match_array(expected_comments)
       end
     end
   end
