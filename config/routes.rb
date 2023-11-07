@@ -8,15 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   
-  # Route to display all users
-  get 'users', to: 'users#index'
-  
-  # Route to show a single user
-  get 'users/:id', to: 'users#show', as: 'user'
-  
-  # Route to list all posts for a given user
-  get 'users/:user_id/posts', to: 'posts#index', as: 'user_posts'
-  
-  # Route to show a single post
-  get 'posts/:id', to: 'posts#show', as: 'post'
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :show]
+  end
 end
