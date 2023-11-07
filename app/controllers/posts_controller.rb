@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :find_user
+    before_action :find_user, only: [:index]
     before_action :find_post, only: [:show]
   
     def index
@@ -10,14 +10,17 @@ class PostsController < ApplicationController
   
     private
   
+    # This method will only be used by the index action
     def find_user
       @user = User.find(params[:user_id])
     end
   
+    # This method will only be used by the show action
     def find_post
       @post = Post.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      flash[:alert] = 'Post not found. Redirecting to user posts.'
-      redirect_to user_posts_path(@user)
+      flash[:alert] = 'Post not found. Redirecting to posts list.'
+      redirect_to posts_path
     end
   end
+  
