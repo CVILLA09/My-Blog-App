@@ -1,3 +1,5 @@
 <h1><%= @user.name %></h1>
-<p>User details here...</p>
-<%= link_to "View Posts", user_posts_path(@user) %>
+<p><%= @user.bio %></p>
+<span>Number of posts: <%= @user.posts.count %></span>
+
+<%= link_to "View All Posts", user_posts_path(@user) %>
