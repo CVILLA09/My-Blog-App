@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,6 +18,11 @@
  *= require_self
  */
 
+/* ==========================================================================
+   Users List Styles
+   Styling for the list of users, including layout and alignment.
+   ========================================================================== */
+
  .users-list {
     padding: 2rem;
     margin: auto;
@@ -26,6 +35,11 @@
     margin-bottom: 3rem;
   }
   
+/* ==========================================================================
+   User Image Styles
+   Specific styles for user profile images in the users list.
+   ========================================================================== */
+
   .user-image {
     width: 100px;
     height: 100px;
@@ -41,6 +55,11 @@
     height: auto;
   }
   
+  /* ==========================================================================
+   User Info Styles
+   Styling for the user information display next to the user image.
+   ========================================================================== */
+
   .user-info {
     flex-grow: 1;
     display: flex;
@@ -66,7 +85,11 @@
     margin-top: .5rem;
   }
   
-  /* User Profile Header */
+/* ==========================================================================
+   User Profile Header
+   The header section of the user profile page, including the image and details.
+   ========================================================================== */
+
 .user-profile-header {
     display: flex;
     align-items: center;
@@ -75,20 +98,28 @@
     padding: 2rem;
   }
   
-  /* Profile Image Section */
+  /* ==========================================================================
+   Profile Image Section
+   Styles for the profile image within the user profile header.
+   ========================================================================== */
+
   .profile-image-section {
-    flex: 0 0 auto; /* Do not grow or shrink */
-    margin-right: 1rem; /* Add space between image and user details */
+    flex: 0 0 auto;
+    margin-right: 1rem;
   }
   
   .profile-image {
     width: 150px;
     height: 150px;
-    border-radius: 10%; /* Make the image round */
+    border-radius: 10%;
     border: 2px solid #000000;
   }
   
-  /* User Details Section */
+  /* ==========================================================================
+   User Details Section
+   Styling for the user details section including name and post count.
+   ========================================================================== */
+
   .user-details {
     flex-grow: 1;
     display: flex;
@@ -111,7 +142,11 @@
     margin-top: -1rem;
   }
   
-  /* User Bio Section */
+  /* ==========================================================================
+   User Bio Section
+   Styles for the bio section of the user profile.
+   ========================================================================== */
+
   .user-bio-section {
     border: 2px solid #000000;
     border-radius: 10px;
@@ -125,7 +160,11 @@
     color: #555;
   }
 
-    /* Posts Section */
+    /* ==========================================================================
+   Posts Section
+   Styles for the user posts previews shown on the user profile page.
+   ========================================================================== */
+
     .user-posts {
         width: auto;
         margin: .5rem 2rem;
@@ -139,8 +178,8 @@
         margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Add this to space out children */
-        align-items: left; /* Align children vertically */
+        justify-content: space-between;
+        align-items: left;
       }
 
       .post-info {
@@ -153,7 +192,12 @@
         font-size: 1em;
         color: #777;
       }
-      
+
+      /* ==========================================================================
+   See All Posts Button
+   Styles for the 'See all posts' button at the bottom of the posts section.
+   ========================================================================== */
+   
       .see-all-posts {
         display: block;
         width: 22%;
