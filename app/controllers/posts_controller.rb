@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    puts @post.body # This is a debugging line
+    puts @post.body
   end
 
   private
