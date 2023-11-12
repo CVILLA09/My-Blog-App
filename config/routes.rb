@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :show, :new, :create] do
+      member do
+        post 'like'
+      end
+    end
   end
-end
