@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :find_user, only: %i[index show new create]
-  before_action :find_post, only: [:show]
+  before_action :find_user, only: %i[index show new create like]
+  before_action :find_post, only: [:show, :like]
 
   # GET /users/:user_id/posts
   def index
@@ -27,6 +27,12 @@ class PostsController < ApplicationController
     end
   end
 
+    # POST /users/:user_id/posts/:id/like
+    def like
+      @post.increment!(:likes_counter)
+      redirect_to user_posts_path(@user), notice: 'You liked a post!'
+    end
+
   private
 
   def find_user
@@ -41,6 +47,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body) # Adjust :body to your post's content attribute if it's named differently.
+    params.require(:post).permit(:title, :body)
   end
 end
