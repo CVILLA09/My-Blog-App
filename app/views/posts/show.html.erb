@@ -10,8 +10,6 @@
     <% if current_user %>
       <div class="post-actions">
         <%= button_to 'Like', like_user_post_path(@user, @post), method: :post %>
-        <!-- Add a link to the new comment form -->
-        <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post), class: 'btn btn-primary' %>
       </div>
     <% end %>
   </div>
@@ -26,6 +24,10 @@
     <% end %>
   </div>
 
+  <!-- Add a link to the new comment form -->
   <!-- Back to Posts Link -->
-  <%= link_to 'Back to Posts', user_posts_path(@user), class: "back-to-posts" %>
+  <div class="button-group2">
+    <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post), class: 'btn btn-primary2' %>
+    <%= link_to 'Back to Posts', user_posts_path(@user), class: "btn btn-secondary2" %>
+  </div>
 </div>
