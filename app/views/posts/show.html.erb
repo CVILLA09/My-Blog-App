@@ -1,17 +1,16 @@
 <div class="single-post-container">
   <div class="post--header">
     <h1>Post #<%= @post.id %> by <%= @user.name %></h1>
-    <div class="post--body">
-      <p><%= @post.body %></p>
-    </div>
+    <% if current_user %>
+      <div class="like-button">
+        <%= button_to like_user_post_path(@user, @post), method: :post do %>
+          <i class="fas fa-thumbs-up"></i>
+        <% end %>
+      </div>
+    <% end %>
     <div class="post--stats">
       <span>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes_counter %></span>
     </div>
-    <% if current_user %>
-      <div class="post-actions">
-        <%= button_to 'Like', like_user_post_path(@user, @post), method: :post %>
-      </div>
-    <% end %>
   </div>
 
   <!-- Comments Section -->

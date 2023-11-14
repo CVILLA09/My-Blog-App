@@ -372,9 +372,7 @@
 
 /* Post Header */
 .post--header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
   border-bottom: 1px solid #ddd;
   padding: 1rem;
   padding-bottom: 1rem;
@@ -382,9 +380,25 @@
   border: 2px solid #000;
 }
 
+/* Post Stats */
 .post--stats {
-  flex: 1;
   text-align: right;
+}
+
+.like-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.like-button form {
+  display: inline; /* Adjust as needed */
+}
+
+.like-button i {
+  cursor: pointer;
+  color: #000; /* Color of the thumbs-up icon */
+  font-size: 1.5em; /* Size of the thumbs-up icon */
 }
 
 /* Post Body */
