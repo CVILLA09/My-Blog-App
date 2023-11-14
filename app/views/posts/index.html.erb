@@ -42,5 +42,5 @@
 </div>
 
 <% if @user && @posts.any? %>
-  <%= link_to 'Last Post', user_post_path(@user, @posts.last), class: "pagination" %>
+  <%= link_to 'Go Back', user_path(@user), class: "pagination" %>
 <% end %>
