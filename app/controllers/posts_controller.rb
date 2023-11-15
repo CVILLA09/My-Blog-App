@@ -18,7 +18,9 @@ class PostsController < ApplicationController
   end
 
   # GET /users/:user_id/posts/:id
-  def show; end
+  def show
+    logger.debug "Showing post: #{@post}"
+  end  
 
   # GET /users/:user_id/posts/new
   def new

@@ -378,17 +378,21 @@
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border: 2px solid #000;
+  border-radius: 10px;
 }
 
 /* Post Stats */
 .post--stats {
   text-align: right;
+  margin-bottom: 0.5 rem;
+  border-bottom: 1px solid #ddd;
 }
 
 .like-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  border-radius: 10px;
 }
 
 .like-button form {
@@ -411,11 +415,10 @@
 /* Post Comments */
 .post--comments {
   margin-top: 1rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
   padding-top: 1rem;
   border: 2px solid #000;
-  width: calc(100% - 4rem);
+  border-radius: 10px;
+  width: 99.6%;
 }
 
 .comment00 {
@@ -451,4 +454,79 @@
 .btn-secondary2 {
   background-color: #777;
   color: #fff;
+}
+
+/* ==========================================================================
+  Create New Post Form (http://localhost:3000/users/5/posts/X)
+   Styles for the 'Create New Post' page.
+   ========================================================================== */
+
+/* Style for the entire form container */
+.form-container {
+  width: calc(100%-4rem);
+  margin: auto;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+/* Style for form fields */
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.field input[type="text"],
+.field textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px;
+}
+
+/* Style for form actions */
+.actions {
+  text-align: right;
+}
+
+.actions input[type="submit"] {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #0056b3; /* A darker shade of blue for hover effect */
+}
+
+/* Back button style */
+#back-btn {
+  background-color: #f8f9fa; /* Light grey background */
+  border: 1px solid #ddd; /* Light grey border */
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: inline-block; /* Allows padding and margin */
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+#back-btn:hover {
+  background-color: #e2e6ea; /* A shade darker for hover effect */
+}
+
+/* Error explanation styles */
+#error_explanation {
+  padding: 1rem;
+  background-color: #f8d7da; /* Light red for errors */
+  border: 1px solid #f5c6cb; /* Darker shade of red for border */
+  border-radius: 4px;
+  color: #721c24; /* Dark red text color for contrast */
+  margin-bottom: 1rem;
 }
