@@ -384,7 +384,7 @@
 /* Post Stats */
 .post--stats {
   text-align: right;
-  margin-bottom: 0.5 rem;
+  margin-bottom: 0.5em;
   border-bottom: 1px solid #ddd;
 }
 
@@ -396,18 +396,18 @@
 }
 
 .like-button form {
-  display: inline; /* Adjust as needed */
+  display: inline;
 }
 
 .like-button i {
   cursor: pointer;
-  color: #000; /* Color of the thumbs-up icon */
-  font-size: 1.5em; /* Size of the thumbs-up icon */
+  color: #000;
+  font-size: 1.5em;
 }
 
 /* Post Body */
 .post--body {
-  margin-top: 1.5rem; /* This provides space between the title and the body */
+  margin-top: 1.5rem;
   padding: 1rem;
   color: #000;
 }
@@ -435,17 +435,6 @@
   margin-top: 20px;
 }
 
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 1rem;
-  border-radius: 10px;
-  border: 2px solid #000;
-  font-size: 1.4em;
-  text-align: center;
-  cursor: pointer;
-}
-
 .btn-primary2 {
   background-color: #007bff;
   color: #fff;
@@ -463,7 +452,7 @@
 
 /* Style for the entire form container */
 .form-container {
-  width: calc(100%-4rem);
+  width: calc(100% - 4rem);
   margin: auto;
   padding: 2rem;
   background-color: #fff;
@@ -484,7 +473,7 @@
 .field textarea {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ccc; /* Light grey border */
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
@@ -494,7 +483,7 @@
 }
 
 .actions input[type="submit"] {
-  background-color: #007bff; /* Bootstrap primary blue */
+  background-color: #007bff;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -503,30 +492,30 @@
 }
 
 .actions input[type="submit"]:hover {
-  background-color: #0056b3; /* A darker shade of blue for hover effect */
+  background-color: #0056b3;
 }
 
 /* Back button style */
 #back-btn {
-  background-color: #f8f9fa; /* Light grey background */
-  border: 1px solid #ddd; /* Light grey border */
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  display: inline-block; /* Allows padding and margin */
+  display: inline-block;
   margin-bottom: 1rem;
   border-radius: 4px;
 }
 
 #back-btn:hover {
-  background-color: #e2e6ea; /* A shade darker for hover effect */
+  background-color: #e2e6ea;
 }
 
 /* Error explanation styles */
 #error_explanation {
   padding: 1rem;
-  background-color: #f8d7da; /* Light red for errors */
-  border: 1px solid #f5c6cb; /* Darker shade of red for border */
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
   border-radius: 4px;
-  color: #721c24; /* Dark red text color for contrast */
+  color: #721c24;
   margin-bottom: 1rem;
 }
