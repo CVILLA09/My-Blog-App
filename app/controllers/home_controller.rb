@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
     def index
-      # Add any logic needed for your homepage or leave this method empty if no logic is needed.
+      redirect_to new_user_session_path
     end
   end
   

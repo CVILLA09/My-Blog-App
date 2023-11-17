@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Defines the root path route ("/")
   # Change to point to 'home#index'
   root "home#index"
