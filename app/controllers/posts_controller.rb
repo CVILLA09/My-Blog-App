@@ -7,13 +7,13 @@ class PostsController < ApplicationController
     if params[:user_id]
       @user = User.find_by(id: params[:user_id])
       if @user
-        @posts = @user.posts
+        @posts = @user.posts.includes(:comments)
       else
         flash[:alert] = 'User not found.'
         redirect_to root_path and return
       end
     else
-      @posts = Post.all
+      @posts = Post.all.includes(:comments)
     end
   end
 
