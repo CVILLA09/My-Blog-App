@@ -26,6 +26,9 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+# Add the 'devise' gem
+gem 'devise'
+
 # Use Rubocop for linters
 gem 'rubocop', '>= 1.0', '< 2.0'
 # Use Redis adapter to run Action Cable in production
