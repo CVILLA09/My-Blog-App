@@ -14,15 +14,15 @@ RSpec.feature 'User Index Page', type: :feature do
 
   scenario 'User can see the profile picture and the number of posts each user has written' do
     visit users_path
-  
+
     # Check for the presence of an image in user entries
     within '.users-list' do
       expect(page).to have_css('.user-entry img', count: 2)
     end
-  
+
     # Check for the current number of posts as reflected in the view
     expect(page).to have_content('Number of posts: 0', count: 2)
-  end  
+  end
 
   scenario 'User can click on a user and be redirected to their show page' do
     visit users_path

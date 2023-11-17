@@ -14,7 +14,7 @@ RSpec.feature 'Post Show Page', type: :feature do
     expect(page).to have_content(@post.title)
     expect(page).to have_content(@user.name)
     expect(page).to have_content(@post.body)
-    expect(page).to have_content("Comments: 2, Likes: 3")
+    expect(page).to have_content('Comments: 2, Likes: 3')
     @post.comments.each do |comment|
       expect(page).to have_content(comment.user.name)
       expect(page).to have_content(comment.text)

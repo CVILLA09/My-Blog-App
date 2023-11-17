@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   # GET /users/:user_id/posts/:id
   def show
     logger.debug "Showing post: #{@post}"
-  end  
+  end
 
   # GET /users/:user_id/posts/new
   def new
