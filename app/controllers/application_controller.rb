@@ -7,11 +7,11 @@ class ApplicationController < ActionController::Base
 
   # This method allows us to accept additional parameters for the user sign-up and account update processes.
   def configure_permitted_parameters
-    # For sign-up process, permit the :name parameter along with the other required parameters.
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    # For sign-up process, permit the :name, :bio, and :photo parameters along with the other required parameters.
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :bio, :photo, :password, :password_confirmation])
 
-    # For the account update process, permit the :name parameter along with other parameters that might be needed for updating the user's account.
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+    # For the account update process, permit the :name, :bio, and :photo parameters along with other parameters that might be needed for updating the user's account.
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio, :photo])
   end
 
   # This method determines where to redirect after a successful sign-in.
